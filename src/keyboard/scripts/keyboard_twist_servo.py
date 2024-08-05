@@ -33,8 +33,8 @@ def print_menu():
     print("---------------------------")
     print("   u    i    o")
     print("   j    k    l")
-    print("\nn - Open gripper")
-    print("\nm - Close grippper")
+    print("\no - Open gripper")
+    print("\nl - Close grippper")
     print("\nanything else : stop")
     print("\nCTRL-C to quit")
 
