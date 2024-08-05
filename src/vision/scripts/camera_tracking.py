@@ -11,11 +11,11 @@ from cv_bridge import CvBridge, CvBridgeError
 bridge = CvBridge()
 
 # Define lower and upper bounds for the color yellow in HSV space
-lower_bound = np.array([20, 100, 50])
+lower_bound = np.array([20, 60, 50])
 upper_bound = np.array([30, 255, 255])
 
 # Width of the frame (since we set it to 640)
-frame_width = 640
+frame_width = 320
 # Calculate sector width
 sector_width = frame_width // 5
 
@@ -76,8 +76,8 @@ def callbackFunction(ros_image):
 
                     # Publish the sector position as a Twist message
                     twist_msg = Twist()
-                    twist_msg.linear.x = 0
-                    twist_msg.angular.z = sector_label * 1.0  # Adjust the multiplier as needed
+                    #twist_msg.linear.x = 0
+                    twist_msg.angular.z = sector_label * 0.3  # Adjust the multiplier as needed
                     cmd_vel_pub.publish(twist_msg)
                     break
 

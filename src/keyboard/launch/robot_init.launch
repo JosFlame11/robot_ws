@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="keyboard" type="keyboard_twist_servo.py" name="Keyboard_controller" output="screen"></node>
+    <node pkg="vision" type="camera_tracking.py" name="Tracking_yellow_objects" output="screen"></node>
+</launch>

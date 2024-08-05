@@ -7,7 +7,7 @@ from pynput import keyboard
 import os
 
 # Define the initial servo angles
-servo_angles = [100.0, 90.0, 90.0, 180.0]
+servo_angles = [165.0, 10.0, 90.0, 170.0]
 
 # Define publishers for each servo
 pub1 = None
@@ -49,10 +49,10 @@ def on_press(key):
             twist.angular.z = 0.0
         elif key.char == 'a':
             twist.linear.x = 0.0
-            twist.angular.z = 2.5
+            twist.angular.z = -2.5
         elif key.char == 'd':
             twist.linear.x = 0.0
-            twist.angular.z = -2.5
+            twist.angular.z = 2.5
         else:
             twist.linear.x = 0.0
             twist.angular.z = 0.0
@@ -79,7 +79,7 @@ def on_press(key):
             servo_angles[2] -= 1
             pub3.publish(servo_angles[2])
         elif key.char == 'n':
-            servo_angles[3] = 175
+            servo_angles[3] = 170
             pub4.publish(servo_angles[3])
         elif key.char == 'm':
             servo_angles[3] = 125
