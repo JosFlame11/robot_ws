@@ -7,7 +7,7 @@ from pynput import keyboard
 import os
 
 # Define the initial servo angles
-servo_angles = [165.0, 10.0, 90.0, 170.0]
+servo_angles = [165.0, 10.0, 170.0, 170.0]
 
 # Define publishers for each servo
 pub1 = None
@@ -73,17 +73,17 @@ def on_press(key):
             servo_angles[1] -= 1
             pub2.publish(servo_angles[1])
         elif key.char == 'o':
-            servo_angles[2] += 1
+            servo_angles[2] = 170
             pub3.publish(servo_angles[2])
         elif key.char == 'l':
-            servo_angles[2] -= 1
+            servo_angles[2] = 140
             pub3.publish(servo_angles[2])
         elif key.char == 'n':
             servo_angles[3] = 170
-            pub4.publish(servo_angles[3])
+            #pub4.publish(servo_angles[3])
         elif key.char == 'm':
-            servo_angles[3] = 125
-            pub4.publish(servo_angles[3])
+            servo_angles[3] = 140
+            #pub4.publish(servo_angles[3])
 
         # Limit the angles between 0 and 180
         for i in range(4):
